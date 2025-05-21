@@ -41,7 +41,7 @@ button {
 
 .result {
   margin-top: 30px;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
@@ -58,5 +58,5 @@ button {
 
 .chicken-img.visible {
   opacity: 1;
+  transform: scale(1.1);
 }
-
