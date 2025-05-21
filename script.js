@@ -4,23 +4,26 @@ function calcCP() {
   const bench = parseFloat(document.getElementById('bench').value) || 0;
   const gain = parseFloat(document.getElementById('gain').value) || 0;
 
-  // 1. CP 계산
   const chickenStrength = 5; // 닭 한 조각이 들 수 있는 힘 (kg)
   const chickenPower = (bench / chickenStrength).toFixed(1);
 
-  // 2. 닭가슴살 섭취량 계산
-  const proteinPerKg = 250; // 1kg 근육 생성에 필요한 단백질 (g)
-  const proteinPerChicken = 25; // 닭가슴살 100g당 단백질 (g)
+  const proteinPerKg = 250;
+  const proteinPerChicken = 25;
   const totalProtein = gain * proteinPerKg;
   const totalChicken = Math.ceil(totalProtein / proteinPerChicken);
 
-  // 3. 출력
   document.getElementById('result').innerHTML = `
-    🐔 당신의 가슴은 <strong>${chickenPower} CP</strong>입니다.<br>
-    닭가슴살 한 조각이 낼 수 있는 힘(5kg)을 기준으로,<br>
-    당신의 벤치프레스는 닭가슴살 <strong>${chickenPower}</strong>쪽이 동시에 들고 있는 셈입니다.<br><br>
-    🍗 또한, 총 <strong>${totalChicken}</strong>개의 닭가슴살이<br>
-    당신의 근육을 만드는 데 사용되었을 것으로 추정됩니다.
+    <div class="cp-box">
+      <h2>🔥 Your Chest is <strong>${chickenPower} CP</strong></h2>
+      <p>💪 That's equivalent to <strong>${chickenPower}</strong> chicken breasts lifting in unison.</p>
+      <p>🍗 Estimated <strong>${totalChicken}</strong> chicken breasts consumed during your transformation.</p>
+    </div>
+    <div class="pack-container">
+      <img src="img/muscle-chicken-pack.png" alt="CP Pack" class="chicken-pack" />
+      <div class="label label-top-left">100% NATURAL BULK</div>
+      <div class="label label-top-right">NO ROIDS</div>
+      <div class="label label-bottom">STEROID-FREE PROTEIN</div>
+    </div>
   `;
 
   drawChickens(Math.min(totalChicken, 20));
