@@ -1,3 +1,5 @@
+// script.js
+
 function calcCP() {
   const bench = parseFloat(document.getElementById('bench').value) || 0;
   const gain = parseFloat(document.getElementById('gain').value) || 0;
@@ -21,7 +23,7 @@ function calcCP() {
     당신의 근육을 만드는 데 사용되었을 것으로 추정됩니다.
   `;
 
-  drawChickens(Math.min(totalChicken, 20)); // 최대 20개만 표시
+  drawChickens(Math.min(totalChicken, 20));
 }
 
 function drawChickens(count) {
